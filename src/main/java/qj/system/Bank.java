@@ -18,7 +18,7 @@ public class Bank {
     }
 
     public int close(String name) {
-        int result = checkInput(name);
+        int result = checkCustomer(name);
         if (result != 0) {
             return result;
         }
@@ -44,7 +44,6 @@ public class Bank {
     }
 
     public int withdraw(String name, String amountStr) {
-        // Check value
         int amount = checkInput(name, amountStr);
         if (amount < 0) {
             return amount;
@@ -60,9 +59,9 @@ public class Bank {
     }
 
     public int showBalance(String name) {
-        int amount = checkInput(name);
-        if (amount < 0) {
-            return amount;
+        int result = checkCustomer(name);
+        if (result < 0) {
+            return result;
         }
 
         return customer.get(name).getBalance();
@@ -70,7 +69,7 @@ public class Bank {
 
     /* private */
 
-    private int checkInput(String name) {
+    private int checkCustomer(String name) {
         // 顧客が存在するかチェック
         if (!customer.containsKey(name)) {
             return -7;
@@ -80,8 +79,8 @@ public class Bank {
     }
 
     private int checkInput(String name, String amountStr) {
-        int result = checkInput(name);
-        if (result != 0) return result;
+        int result = checkCustomer(name);
+        if (result < 0) return result;
 
         // 金額を数値にパース
         int amount;
