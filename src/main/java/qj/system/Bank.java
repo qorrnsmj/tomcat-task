@@ -89,7 +89,7 @@ public class Bank {
         } catch (NumberFormatException e) {
             return -4;
         }
-//test
+
         // 金額が0以下の場合
         if (amount < 0) {
             return -3;
