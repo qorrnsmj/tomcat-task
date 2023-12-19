@@ -1,4 +1,4 @@
-package qj.jsp;
+package qj.exercise.jsp;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,22 +6,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 
-@WebServlet(name = "Sample4", value = "/sample4")
-public class Sample4 extends HttpServlet {
+@WebServlet(name = "Sample5", value = "/sample5")
+public class Sample5 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String value = req.getParameter("season");
-        System.out.println(value);
+        List<String> values = Arrays.asList(req.getParameterValues("season"));
+        System.out.println(values);
 
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         PrintWriter out = resp.getWriter();
 
         out.println("<html>");
-        out.println("<head><title>ラジオボタン</title></head>");
+        out.println("<head><title>チェックボックス</title></head>");
         out.println("<body>");
-        out.println("<h2>" + value + "が選択されました</h2>");
+        out.println("<h2>");
+
+        values.forEach(value -> out.println(value + " "));
+
         out.println("</body>");
         out.println("</html>");
     }

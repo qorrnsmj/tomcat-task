@@ -1,4 +1,4 @@
-package qj.jsp;
+package qj.exercise.jsp;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,17 +7,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Sample1", urlPatterns = "/sample1")
-public class Sample1 extends HttpServlet {
+@WebServlet(name = "Sample4", value = "/sample4")
+public class Sample4 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String value = req.getParameter("season");
+        System.out.println(value);
+
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         PrintWriter out = resp.getWriter();
 
         out.println("<html>");
-        out.println("<head><title>sample1</title></head>");
-        out.println("<body>こんにちは</body>");
+        out.println("<head><title>ラジオボタン</title></head>");
+        out.println("<body>");
+        out.println("<h2>" + value + "が選択されました</h2>");
+        out.println("</body>");
         out.println("</html>");
     }
 }
