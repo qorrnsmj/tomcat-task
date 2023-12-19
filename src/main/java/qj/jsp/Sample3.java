@@ -1,14 +1,16 @@
 package qj.jsp;
 
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Sample2", value = "/sample2")
-public class Sample2 extends HttpServlet {
+@WebServlet(name = "Sample3", value = "/sample3")
+public class Sample3 extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String inputText = req.getParameter("cars");
         System.out.println(inputText);
 
