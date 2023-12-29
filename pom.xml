@@ -21,12 +21,6 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.apache.tomcat</groupId>-->
-<!--      <artifactId>tomcat-catalina</artifactId>-->
-<!--      <version>10.1.11</version>-->
-<!--      <scope>provided</scope>-->
-<!--    </dependency>-->
   </dependencies>
 
   <build>
@@ -39,6 +33,7 @@
           <server>localhost</server>
           <path>/newKadai2</path>
           <url>http://localhost:8080/newKadai2</url>
+          <uriEncoding>utf-8</uriEncoding>
           <update>true</update>
         </configuration>
       </plugin>
