@@ -30,7 +30,6 @@ public class DepositSv extends HttpServlet {
         out.println("口座名 : <input type='text' name='name' size='20'/><br>");
         out.println("入金額 : <input type='text' name='amount' size='20'/><br>");
         out.println("<input type='hidden' name='command' value='deposit'/>");
-        out.println("<input type='hidden' name='command' value='deposit'/>");
         out.println("<input type='submit' value='OK'/>");
         out.println("<input type='reset' value='CANCEL'/><br>");
 

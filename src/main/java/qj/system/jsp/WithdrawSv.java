@@ -29,8 +29,7 @@ public class WithdrawSv extends HttpServlet {
         // TODO: type=hiddenは2個でいい？
         out.println("口座名 : <input type='text' name='name' size='20'/><br>");
         out.println("引き出し額 : <input type='text' name='amount' size='20'/><br>");
-        out.println("<input type='hidden' name='command' value='deposit'/>");
-        out.println("<input type='hidden' name='command' value='deposit'/>");
+        out.println("<input type='hidden' name='command' value='withdraw'/>");
         out.println("<input type='submit' value='OK'/>");
         out.println("<input type='reset' value='CANCEL'/><br>");
 
