@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Deposit", urlPatterns = "/deposit")
-public class Deposit extends HttpServlet {
+@WebServlet(name = "Balance", urlPatterns = "/balance")
+public class BalanceSv extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
@@ -17,20 +17,17 @@ public class Deposit extends HttpServlet {
 
         out.println("<!DOCTYPE html>");
         out.println("<head>");
-        out.println("<head><title>預金</title></head>");
+        out.println("<head><title>残高照会</title></head>");
 
         out.println("<body>");
-        out.println("<h1>預金</h1>");
-        out.println("<p class=\"text\">預金する口座名と入金額を入力して「OK」をおしてください</p>");
+        out.println("<h1>残高照会</h1>");
+        out.println("<p class=\"text\">残高照会する口座名を入力して「OK」をおしてください</p>");
 
         out.println("<form action='bank' method='GET'>");
         out.println("<div class='text'>");
 
-        // TODO: type=hiddenは2個でいい？
         out.println("口座名 : <input type='text' name='name' size='20'/><br>");
-        out.println("入金額 : <input type='text' name='amount' size='20'/><br>");
-        out.println("<input type='hidden' name='command' value='deposit'/>");
-        out.println("<input type='hidden' name='command' value='deposit'/>");
+        out.println("<input type='hidden' name='command' value='balance'/>");
         out.println("<input type='submit' value='OK'/>");
         out.println("<input type='reset' value='CANCEL'/><br>");
 

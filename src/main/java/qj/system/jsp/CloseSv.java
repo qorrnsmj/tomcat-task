@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "Close", urlPatterns = "/close")
-public class Close extends HttpServlet {
+public class CloseSv extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
